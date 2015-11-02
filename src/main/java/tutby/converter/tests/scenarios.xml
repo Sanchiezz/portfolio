@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestsAutomation">
+    <listeners>
+        <listener class-name="tutby.converter.utils.ReportListener"/>
+    </listeners>
+    <test verbose="1" name="test1" annotations="JDK" preserve-order="true">
+        <parameter name="InputCurrencyName" value="Доллар США"/>
+        <parameter name="OutputCurrencyName" value="Белорусский рубль"/>
+        <parameter name="InputCurrencyAmount" value="100"/>
+
+        <parameter name="InputCurrencyName2" value="Доллар США"/>
+        <parameter name="OutputCurrencyName2" value="Белорусский рубль"/>
+        <parameter name="InputCurrencyAmount2" value="1"/>
+
+        <classes>
+            <class name="tutby.converter.tests.JustClicksOnAllControlsTest">
+                <methods>
+                    <include name="Test"/>
+                </methods>
+            </class>
+
+            <class name="tutby.converter.tests.SimpleConvertUSD2BYRTest">
+                <methods>
+                    <include name="Test"/>
+                </methods>
+            </class>
+
+            <class name="tutby.converter.tests.WeekendRateTest">
+                <methods>
+                    <include name="Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
