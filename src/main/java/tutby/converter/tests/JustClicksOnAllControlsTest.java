@@ -13,7 +13,7 @@ public class JustClicksOnAllControlsTest extends AbstractTest {
         MainPage mainPage = new MainPage(getDriver());
         mainPage.assertIsOpened();
 
-        mainPage.selectTab("Ъгабл ТРЫов");
+        mainPage.selectTab("Ъгабл ТРЫов!");
         mainPage.selectTab("ЪаЮбб-Ъгабл");
         mainPage.selectTab("Ъгабл ТРЫов");
 

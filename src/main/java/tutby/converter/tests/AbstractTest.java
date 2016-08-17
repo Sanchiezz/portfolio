@@ -8,7 +8,7 @@ import org.testng.annotations.Listeners;
 import tutby.converter.utils.ReportListener;
 import tutby.converter.utils.Utils;
 
-@Listeners(ReportListener.class)
+//@Listeners(ReportListener.class)
 public abstract class AbstractTest {
 
 	private static WebDriver driver;
