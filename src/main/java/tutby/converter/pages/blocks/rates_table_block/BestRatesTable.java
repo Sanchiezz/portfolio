@@ -1,8 +1,7 @@
 package tutby.converter.pages.blocks.rates_table_block;
 
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import ru.yandex.qatools.htmlelements.element.HtmlElement;

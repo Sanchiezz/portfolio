@@ -18,9 +18,9 @@ public class SimpleConvertUSD2BYRTest extends AbstractTest {
 		MainPage mainPage = new MainPage(getDriver());
 		mainPage.assertIsOpened();// assert if, defined inside method, control appears on the page
 
-		mainPage.selectTab("–ö–£–†–°–´ –í–ê–õ–Æ–¢");// select "–ö–£–†–°–´ –í–ê–õ–Æ–¢" tab
+		mainPage.selectTab(" ”–—€ ¬¿Àﬁ“");// select " ”–—€ ¬¿Àﬁ“" tab
 
-		mainPage.selectNbrbRatesTable(); //select table under "–ù–ë–†–ë" link
+		mainPage.selectNbrbRatesTable(); //select table under "Õ¡–¡" link
 		todayRateUSD = mainPage.getTodayRate(inputCurrencyName); //get rate for USD and assigns its value to todayRateUSD variable
 		expectedResultUSD = getExpectedResult(todayRateUSD, inputCurrencyAmount); //multiply todayRateUSD by 100 and assigns result to expectedResultUSD variable
 

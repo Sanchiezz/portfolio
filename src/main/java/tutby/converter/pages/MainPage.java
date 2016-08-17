@@ -36,22 +36,6 @@ public class MainPage extends AbstractPage {
 		assertPageIsOpened(currencyConverter);
 	}
 
-	/**
-	 * Selects "КУРСЫ ВАЛЮТ" tab.
-	 */
-	@Deprecated
-	public void selectRatesTab() {
-		bWidget.selectRatesTab();
-	}
-
-	/**
-	 * Selects "КРОСС-КУРСЫ" tab
-	 */
-	@Deprecated
-	public void selectCrossRatesTab() {
-		bWidget.selectCrossRatesTab();
-	}
-
 	public void selectTab(String tabName) {
 		bWidget.selectTab(tabName);
 	}

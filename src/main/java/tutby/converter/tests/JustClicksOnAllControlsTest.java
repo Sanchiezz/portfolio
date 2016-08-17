@@ -5,59 +5,57 @@ import tutby.converter.pages.MainPage;
 
 public class JustClicksOnAllControlsTest extends AbstractTest {
 
-	@Test(description = "Scenario #0."
-			+
-			" Test performs clicks on rates tab and cross rates tab. Also test performs clicks on all currencies in cross rates tab, and all types of rates links in rates tab."
-			+
-			" Also test performs actions of date setup, currency selection currency amount input, existing currency reselection, and finally third currency row addition to currency converter form.")
+    @Test(description = "Scenario #0."
+            + " Test performs clicks on rates tab and cross rates tab. Also test performs clicks on all currencies in cross rates tab, and all types of rates links in rates tab."
+            + " Also test performs actions of date setup, currency selection currency amount input, existing currency reselection, and finally third currency row addition to currency converter form.")
 
-	public void Test() {
-		MainPage mainPage = new MainPage(getDriver());
-		mainPage.assertIsOpened();
+    public void Test() {
+        MainPage mainPage = new MainPage(getDriver());
+        mainPage.assertIsOpened();
 
-		mainPage.selectTab("РљРЈР РЎР« Р’РђР›Р®Рў");
-		mainPage.selectTab("РљР РћРЎРЎ-РљРЈР РЎР«");
-		mainPage.selectTab("РљРЈР РЎР« Р’РђР›Р®Рў");
-		mainPage.selectTab("РљР РћРЎРЎ-РљРЈР РЎР«");
+        mainPage.selectTab("КУРСЫ ВАЛЮТ");
+        mainPage.selectTab("КРОСС-КУРСЫ");
+        mainPage.selectTab("КУРСЫ ВАЛЮТ");
 
-		mainPage.getCrossRateFor("Р•РІСЂРѕ", "Р”РѕР»Р»Р°СЂ РЎРЁРђ");
-		mainPage.getCrossRateFor("Р”РѕР»Р»Р°СЂ РЎРЁРђ", "Р•РІСЂРѕ");
-		mainPage.getCrossRateFor("РџРѕР»СЊСЃРєРёР№ Р·Р»РѕС‚С‹Р№", "Р РѕСЃСЃРёР№СЃРєРёР№ СЂСѓР±Р»СЊ");
-		mainPage.getCrossRateFor("Р•РІСЂРѕ", "РЈРєСЂР°РёРЅСЃРєР°СЏ РіСЂРёРІРЅР°");
-		mainPage.getCrossRateFor("Р”РѕР»Р»Р°СЂ РЎРЁРђ", "РџРѕР»СЊСЃРєРёР№ Р·Р»РѕС‚С‹Р№");
+        mainPage.selectTab("КРОСС-КУРСЫ");
+        mainPage.getCrossRateFor("Евро", "Доллар США");
+        mainPage.getCrossRateFor("Доллар США", "Евро");
+        mainPage.getCrossRateFor("10 польских злотых", "100 российских рублей");
+        mainPage.getCrossRateFor("Евро", "100 украинских гривен");
+        mainPage.getCrossRateFor("Доллар США", "10 польских злотых");
 
-		mainPage.getCrossRateFor("РџРѕР»СЊСЃРєРёР№ Р·Р»РѕС‚С‹Р№", "Р РѕСЃСЃРёР№СЃРєРёР№ СЂСѓР±Р»СЊ");
-		mainPage.getCrossRateFor("Р•РІСЂРѕ", "Р”РѕР»Р»Р°СЂ РЎРЁРђ");
-		mainPage.getCrossRateFor("Р•РІСЂРѕ", "РЈРєСЂР°РёРЅСЃРєР°СЏ РіСЂРёРІРЅР°");
-		mainPage.getCrossRateFor("Р”РѕР»Р»Р°СЂ РЎРЁРђ", "Р•РІСЂРѕ");
-		mainPage.getCrossRateFor("Р”РѕР»Р»Р°СЂ РЎРЁРђ", "Р•РІСЂРѕ");
+        mainPage.getCrossRateFor("10 польских злотых", "100 российских рублей");
+        mainPage.getCrossRateFor("Евро", "Доллар США");
+        mainPage.getCrossRateFor("Евро", "100 украинских гривен");
+        mainPage.getCrossRateFor("Доллар США", "Евро");
+        mainPage.getCrossRateFor("Доллар США", "Евро");
 
-		mainPage.selectTab("РљРЈР РЎР« Р’РђР›Р®Рў");
-		mainPage.selectTab("РљР РћРЎРЎ-РљРЈР РЎР«");
-		mainPage.selectTab("РљРЈР РЎР« Р’РђР›Р®Рў");
+        mainPage.selectTab("КУРСЫ ВАЛЮТ");
+        mainPage.selectTab("КРОСС-КУРСЫ");
 
-		mainPage.selectNbrbRatesTable();
-		mainPage.selectBvfbRatesTable();
-		mainPage.selectCbrfRatesTable();
-		mainPage.selectBestRatesTable();
+        mainPage.selectTab("КУРСЫ ВАЛЮТ");
+        mainPage.selectNbrbRatesTable();
+        mainPage.selectBvfbRatesTable();
+        mainPage.selectCbrfRatesTable();
+        mainPage.selectBestRatesTable();
 
-		mainPage.selectBvfbRatesTable();
-		mainPage.selectBvfbRatesTable();
-		mainPage.selectCbrfRatesTable();
-		mainPage.selectNbrbRatesTable();
+        mainPage.selectBvfbRatesTable();
+        mainPage.selectBvfbRatesTable();
+        mainPage.selectCbrfRatesTable();
+        mainPage.selectNbrbRatesTable();
 
-		mainPage.setCalendarDate("2015-09-12");
-		mainPage.setCalendarDate("2014-10-09");
-		mainPage.selectConverterCurrency("РђРІСЃС‚СЂР°Р»РёР№СЃРєРёР№ РґРѕР»Р»Р°СЂ");
-		mainPage.selectConverterCurrency("РЁРІРµР№С†Р°СЂСЃРєРёР№ С„СЂР°РЅРє");
-		mainPage.setCurrencyAmount("РђРІСЃС‚СЂР°Р»РёР№СЃРєРёР№ РґРѕР»Р»Р°СЂ", "200");
-		mainPage.setCurrencyAmount("РЁРІРµР№С†Р°СЂСЃРєРёР№ С„СЂР°РЅРє", "500");
-		mainPage.selectBaseCurrency("РђРІСЃС‚СЂР°Р»РёР№СЃРєРёР№ РґРѕР»Р»Р°СЂ");
-		mainPage.selectBaseCurrency("РЁРІРµР№С†Р°СЂСЃРєРёР№ С„СЂР°РЅРє");
-		mainPage.setCalendarDate("2014-11-23");
-		mainPage.reselectConverterCurrency("РђРІСЃС‚СЂР°Р»РёР№СЃРєРёР№ РґРѕР»Р»Р°СЂ", "РЎР”Р ");
-		mainPage.reselectConverterCurrency("РЁРІРµР№С†Р°СЂСЃРєРёР№ С„СЂР°РЅРє", "Р‘РµР»РѕСЂСѓСЃСЃРєРёР№ СЂСѓР±Р»СЊ");
-		mainPage.selectConverterCurrency("РСЃР»Р°РЅРґСЃРєР°СЏ РєСЂРѕРЅР°");
-		mainPage.reselectConverterCurrency("РСЃР»Р°РЅРґСЃРєР°СЏ РєСЂРѕРЅР°", "Р”Р°С‚СЃРєР°СЏ РєСЂРѕРЅР°");
-	}
+        mainPage.setCalendarDate("2015-09-12");
+        mainPage.setCalendarDate("2014-10-09");
+        mainPage.selectConverterCurrency("Австралийский доллар");
+        mainPage.selectConverterCurrency("Швейцарский франк");
+        mainPage.setCurrencyAmount("Австралийский доллар", "200");
+        mainPage.setCurrencyAmount("Швейцарский франк", "500");
+        mainPage.selectBaseCurrency("Австралийский доллар");
+        mainPage.selectBaseCurrency("Швейцарский франк");
+        mainPage.setCalendarDate("2014-11-23");
+        mainPage.reselectConverterCurrency("Австралийский доллар", "XDR");
+        mainPage.reselectConverterCurrency("Швейцарский франк", "Белорусский рубль");
+        mainPage.selectConverterCurrency("Исландская крона");
+        mainPage.reselectConverterCurrency("Исландская крона", "Датская крона");
+    }
 }
