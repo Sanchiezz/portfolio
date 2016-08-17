@@ -24,7 +24,7 @@ import static org.testng.TestNG.DEFAULT_OUTPUTDIR;
 
 public class ReportListener extends TestListenerAdapter {
 	String dateFormat = "yyyy-MM-dd HH:mm:ss,SSSS";
-	public static String customReportMessage = "custom reprot message!!";
+	public static String customReportMessage = "custom report message!";
 
 	@Override
 	public void onTestFailure(ITestResult tr) {
@@ -42,7 +42,7 @@ public class ReportListener extends TestListenerAdapter {
 		super.onFinish(tc);
 	}
 
-	public ScreenshotDatePath makeScreenshot(String screenshotFolder, ITestResult tr, WebDriver driver) {
+	private ScreenshotDatePath makeScreenshot(String screenshotFolder, ITestResult tr, WebDriver driver) {
 		Date d = new Date();
 		SimpleDateFormat fileNameFormater = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss_SSSS");
 		String destPath = new String(DEFAULT_OUTPUTDIR + "/" + screenshotFolder + "/" + tr.getName() + "_" + fileNameFormater.format(d.getTime()) + ".png");

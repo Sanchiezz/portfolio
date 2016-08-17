@@ -16,6 +16,7 @@ public class ExtendedRow extends SimpleRow {
 	}
 
 	public void setCurrencyAmount(String currencyAmount) {
+		inputElement.clear();
 		inputElement.sendKeys(currencyAmount);
 	}
 
